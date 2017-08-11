@@ -7,6 +7,7 @@
 			<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0;" name="viewport" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<style type="text/css">
 			.recBox{background-image: url(img/blue.png); background-size: cover;text-align: center;}
 			.recName{display:inline-block; height:40px;line-height: 40px;color: #f7f7f7;}
@@ -25,8 +26,19 @@
 			.showrecList p:first-child{height: 40px;line-height: 40px;border-bottom: 1px solid darkgray;}
 			.showrecList p:last-child{height: 40px;line-height: 40px;border-top: 1px solid darkgray;position: absolute;bottom: 1px;width: 100%;}
 			.showrecList > ul> li{height: 38px;line-height: 38px; border-bottom: 1px solid darkgray; text-align: left; margin-left:10px;}
+			.closerecList{position:fixed; bottom:0; background:#f5f1f1;}
 			
 		</style>
+		<script>
+			$(function(){
+				$( '.menu' ).click( function(){
+					$( '.showrecList' ).show();
+				} );
+				$( '.closerecList' ).click( function(){
+					$( '.showrecList' ).hide();
+				} );
+			})
+		</script>
 	</head>
 
 	<body>
@@ -71,7 +83,7 @@
 					<li>节目一</li>
 					<li></li>
 				</ul>
-				<p>关闭</p>
+				<p class="closerecList">关闭</p>
 			</div> 
 
 		</div>
