@@ -117,6 +117,8 @@
         var width = $G("videoWidth"),
             height = $G("videoHeight"),
             url=$G('videoUrl').value,
+            phoneurl = $G('phoneUrl').value,
+            phone_html = '<iframe id="phoneURL" src="' + phoneurl + '" frameborder=0 allowfullscreen></iframe> ',
             align = findFocus("videoFloat","name");
         if(!url) return false;
         if ( !checkNum( [width, height] ) ) return false;
@@ -302,7 +304,16 @@
             $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上传文件'.replace(/[\d]/, count) + '</span>');
             return false;
         } else {
-            editor.execCommand('insertvideo', videoObjs, 'upload');
+    	   upload_url = uploadDir + file.url;
+           if (upload_url.substr(-4) == '.mp3') {
+               editor.execCommand('music', {
+                   url: uploadDir + file.url,
+                   width: 400,
+                   height: 95
+               });
+           } else {
+               editor.execCommand('insertvideo', videoObjs, 'upload');
+           }
         }
     }
 

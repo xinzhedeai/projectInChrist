@@ -77,7 +77,7 @@ document.write('<link type="text/css" href="/lib/css/jquery.dataTables.css" rel=
 
 //uedit
 document.write('<script type="text/javascript" src="/lib/ueditor/ueditor.config.js"></script>\
-<script type="text/javascript" src="/lib/ueditor/ueditor.all.js"></script>');
+<script type="text/javascript" src="/lib/ueditor/ueditor.all.min.js"></script>');
 
 //项目样式文件
 document.write('<script type="text/javascript" src="/lib/js/style.js' + jsVersion + '"></script>');

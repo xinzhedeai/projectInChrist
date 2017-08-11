@@ -295,17 +295,19 @@ $(function(){
 		           ]
 		       ]
 	});
-    console.info(flag);
-	if(flag==1){
-		console.info(flag);
-		
-	}else{
-		
-		console.info(flag);
-	}
 	$("#addLog").click(function(){//编辑器保存按钮
 		var title = $(".logTitle").val();
 		var content = UE.getEditor('logEditor').getContent();
+		var reg = /<embed[^>]*src[=\'\"\s]+([^\"\']*)[\"\']?[^>]*>/gi; 
+		console.log(content);
+		var arr = [];
+		while (reg.exec(content)) 
+		{
+		    arr.push(RegExp.$1);
+		}
+		var mp3 = JSON.stringify(arr);
+		console.info(mp3);	
+		
 		addLogWitness(loginUsId,title, content);
 		
 	})

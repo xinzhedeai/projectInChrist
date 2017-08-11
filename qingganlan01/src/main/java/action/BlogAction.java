@@ -50,7 +50,7 @@ public static Logger logger  = Logger.getLogger(UserAction.class);
 	@Autowired
 	private BlogService blogService;
 	
-	
+	       
 	@ResponseBody
 	@RequestMapping("/uploadBlogImg")
 	public	JsonResult  uploadBlogImg(HttpSession session,HttpServletRequest req) throws SysException, IOException{
